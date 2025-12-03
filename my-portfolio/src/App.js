@@ -2,13 +2,13 @@ import './App.css';
 import React, { useEffect, useState } from "react";
 import Header from "./components/header/header";
 import Hero from "./components/hero/hero";
+import Projects from "./components/projects/project";
 // import Footer from "./components/footer/footer";
 // import About from "./components/about/about";
 // import Services from "./components/services/services";
 // import Testimonials from "./components/testimonials/testimonials";
 // import Blogs from "./components/blogs/blog";
 // import Contact from "./components/contact/contact";
-// import Projects from "./components/projects/projects";
 // import Skills from "./components/skills/skills";
 // import ProjectPage from "./pages/projects/projectsPage";
 // import ProjectDetail from "./pages/project-detail/projectDetail";
@@ -108,6 +108,7 @@ function App() {
           </Router> */}
           <Header />
           <Hero />
+          <Projects />
         </>
       )}
     </>
