@@ -1,0 +1,42 @@
+.Loading{
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	z-index: 9999;
+}
+
+.LoadingMessage {
+	color: white;
+	font-size: 1.5rem;
+	margin-top: 1rem;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Spiral{
+	width: 10vw;
+	height: 0.5vw;
+	margin: 0.5vw 0;
+	border-radius: 0.25vw;
+	background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #ff0080);
+	background-size: 400% 400%;
+	animation: Spiral 3s infinite linear, ColorShift 8s ease infinite;
+	animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes ColorShift {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+@keyframes Spiral{
+	0% { transform: rotateY(0deg); opacity: 1; }
+	50% { transform: rotateY(180deg); opacity: 0.5; }
+	100% { transform: rotateY(360deg); opacity: 1; }
+}

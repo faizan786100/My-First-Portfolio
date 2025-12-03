@@ -1,0 +1,5 @@
+h111 = hero of other pages except main hero
+M-h = this is main hero
+o-card = other card
+m-card = Main card
+o-c-content = other card content
