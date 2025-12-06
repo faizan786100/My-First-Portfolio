@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import "./services.css";
 
 // Import Swiper React components and modules
