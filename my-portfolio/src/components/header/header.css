@@ -1,10 +1,13 @@
+/* =========== layout =========== */
+/* =========== Header & Nav =========== */
+
 nav {
     padding: 0 1rem;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgb(0 0 0 / 92%));
     top: 0;
     left: 0;
     z-index: 100;
-    transition: all 0.5s ease;
+    transition: var(--transition);
 }
 
 nav.scrolled {
@@ -44,12 +47,12 @@ nav.scrolled {
 .menu-items::after {
     content: "";
     position: absolute;
-    left: 0;
+    left: 50%;
     bottom: -5px;
     width: 0;
     height: 2px;
     background-color: tomato;
-    transition: width 0.4s ease-out;
+    transition: var(--transition);
 }
 
 /* Expand the underline to match the a tag width on hover */
@@ -61,8 +64,9 @@ nav.scrolled {
 /* Menu Positioning Styles */
 .menuBox {
     position: absolute;
-    padding: 0;
+    top: 100%;
     right: 10px;
+    padding: 0;
     display: block;
     background: linear-gradient(220deg, #2936e9, #7c36ee, #8a08e0);
     z-index: 1000;
@@ -87,57 +91,57 @@ nav.scrolled {
     transform: translateY(0) scale(1);
 }
 
-.menuBox .menu {
+.menuBox li {
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
     transition-delay: 0.1s;
 }
 
-.menuBox.active .menu {
+.menuBox.active li {
     opacity: 1;
     transform: translateY(0);
 }
 
-.menu a {
+.menu Link {
     opacity: 0;
     transform: translateX(10px);
     transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s;
 }
 
-.menuBox.active .menu a:nth-child(1) {
+.menuBox.active li Link:nth-child(1) {
     transition-delay: 0.1s;
 }
 
-.menuBox.active .menu a:nth-child(2) {
+.menuBox.active li Link:nth-child(2) {
     transition-delay: 0.15s;
 }
 
-.menuBox.active .menu a:nth-child(3) {
+.menuBox.active li Link:nth-child(3) {
     transition-delay: 0.2s;
 }
 
-.menuBox.active .menu a:nth-child(4) {
+.menuBox.active li Link:nth-child(4) {
     transition-delay: 0.25s;
 }
 
-.menuBox.active .menu a:nth-child(5) {
+.menuBox.active li Link:nth-child(5) {
     transition-delay: 0.3s;
 }
 
-.menuBox.active .menu a:nth-child(6) {
+.menuBox.active li Link:nth-child(6) {
     transition-delay: 0.35s;
 }
 
-.menuBox.active .menu a:nth-child(7) {
+.menuBox.active li Link:nth-child(7) {
     transition-delay: 0.4s;
 }
 
-.menuBox.active .menu a:nth-child(8) {
+.menuBox.active li Link:nth-child(8) {
     transition-delay: 0.45s;
 }
 
-.menuBox.active .menu a {
+.menuBox.active li Link {
     opacity: 1;
     transform: translateX(0);
 }
@@ -147,20 +151,14 @@ nav.scrolled {
     position: relative;
     height: 40px;
     width: 40px;
-    z-index: 1001;
+    font-size: 40px;
+    /* z-index: 1001; */
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background: transparent;
-    border: none;
-    padding: 0;
-    -webkit-appearance: none;
-    appearance: none;
-    outline: none;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
 
 .menuBox-icon::before,
 .menuBox-icon::after {
@@ -170,7 +168,7 @@ nav.scrolled {
     height: 3px;
     background-color: #fff;
     border-radius: 5px;
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease, Background-color 0.3s ease;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
 }
 
 .menuBox-icon span {
@@ -179,14 +177,7 @@ nav.scrolled {
     background-color: #fff;
     border-radius: 5px;
     position: relative;
-    transition: opacity 0.3s ease, Background-color 0.3s ease;
-}
-.menuBox-icon:hover::before,
-.menuBox-icon:hover::after,
-.menuBox-icon:hover span {
-    background-color: var(--accent);
-    box-shadow: 0 0 8px rgba(255, 0, 255, 0.7);
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease, Background-color 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .menuBox-icon::before {
@@ -211,5 +202,47 @@ nav.scrolled {
 
 .menuBox-icon.active span {
     opacity: 0;
+}
+
+.menuBox-icon:hover::before,
+.menuBox-icon:hover::after,
+.menuBox-icon:hover span {
+    background-color: var(--accent);
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.7);
+}
+
+@media (max-width: 992px) {
+    .menu-des {
+        display: none !important;
+    }
+
+    .menuBox-icon {
+        display: flex;
+    }
+
+    .menuBox {
+        width: 200px;
+        height: auto;
+        right: 20px;
+        max-height: 80vh;
+        overflow-y: auto;
+        /* Add subtle scrollbar styling */
+        scrollbar-width: thin;
+        scrollbar-color: rgba(138, 8, 224, 0.5) rgba(0, 0, 0, 0.1);
+    }
+
+    .menuBox::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .menuBox::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .menuBox::-webkit-scrollbar-thumb {
+        background: rgba(138, 8, 224, 0.5);
+        border-radius: 10px;
+    }
 }
 

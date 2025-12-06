@@ -1,0 +1,38 @@
+.blog-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(41, 54, 233, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    padding: 20px;
+    text-align: center;
+}
+
+.portfolio-item:hover .blog-caption {
+    opacity: 1;
+}
+
+.portfolio-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    transform: translateY(20px);
+    transition: transform 0.5s;
+}
+
+.portfolio-desc {
+    transform: translateY(20px);
+    transition: transform 0.5s;
+    transition-delay: 0.1s;
+}
+
+.portfolio-item:hover .portfolio-title,
+.portfolio-item:hover .portfolio-desc {
+    transform: translateY(0);
+}

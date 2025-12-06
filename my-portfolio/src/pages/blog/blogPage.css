@@ -1,0 +1,213 @@
+/* Newsletter Section */
+.newsletter-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba(41, 54, 233, 0.1), rgba(138, 8, 224, 0.2));
+    margin-top: 40px;
+}
+
+.newsletter-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(30, 30, 30, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-container:hover {
+    box-shadow: var(--neon-glow, 0 0 15px rgba(138, 8, 224, 0.5));
+}
+
+.newsletter-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.newsletter-content p {
+    margin-bottom: 25px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 15px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    font-size: 1rem;
+    outline: none;
+}
+
+.newsletter-form input:focus {
+    border-color: var(--primary, #8a08e0);
+    box-shadow: 0 0 0 2px rgba(138, 8, 224, 0.2);
+}
+
+.newsletter-form button {
+    background: linear-gradient(135deg, #2936e9, #8a08e0);
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    white-space: nowrap;
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(138, 8, 224, 0.4);
+}
+
+/* Enhanced Responsive Adjustments */
+@media (max-width: 1200px) {
+    .o-c-content {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .blog-hero {
+        height: 35vh;
+    }
+    
+    .newsletter-section {
+        padding: 40px 20px;
+    }
+    
+    .newsletter-container {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .newsletter-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .newsletter-content p {
+        font-size: 0.9rem;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+    }
+    
+    .article-content {
+        padding: 20px;
+    }
+    
+    .article-excerpt {
+        font-size: 1rem;
+    }
+    
+    .o-c-content {
+        padding: 30px 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .newsletter-container {
+        padding: 25px 15px;
+    }
+    
+    .newsletter-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .o-c-content {
+        padding: 20px 10px;
+    }
+}
+
+/* Toast Notifications */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 9999;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast.success {
+    background-color: #4CAF50;
+}
+
+.toast.error {
+    background-color: #F44336;
+}
+
+.toast.info {
+    background-color: #2196F3;
+}
+
+.newsletter-feedback {
+    display:none; 
+    margin-top:0.5rem; 
+    color:#ffc107; 
+    font-weight:bold;
+}
+
+@media (max-width: 992px) {
+    .blog-container {
+        flex-direction: column;
+    }
+    
+    .blog-main {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+}
+
+/* Fix for blog hero section across all devices */
+@media (max-width: 480px) {
+    .newsletter-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .newsletter-form input {
+        padding: 12px 15px;
+    }
+    
+    .newsletter-form button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}

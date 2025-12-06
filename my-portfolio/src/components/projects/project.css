@@ -1,23 +1,79 @@
-/* Projects Hero Section */
-.projects-hero, .project-hero {
+/* =========== project section =========== */
+
+#projects {
+    padding-top: 10px;
+    /* Adjust based on your fixed navbar height */
+}
+
+.projects-container {
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 10px;
     position: relative;
-    padding: 80px 0;
-    background: linear-gradient(135deg, rgba(41, 54, 233, 0.2), rgba(138, 8, 224, 0.3));
-    overflow: hidden;
-}
-
-.projects-hero .hero-content {
-    z-index: 2;
-    padding: 30px;
-    max-width: 800px;
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    /* Calculate width to show exactly 4 cards */
+    width: calc(320px * 4 + 60px);
+    /* 320px per card + gaps */
     margin: 0 auto;
-    animation: fadeIn 1s ease-in;
 }
 
-.portfolio-title { color: #fff }
-.portfolio-desc { color: rgba(255,255,255,0.9); font-size: 0.95rem }
+.projects-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
 
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
 
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card .content {
+    padding: 20px;
+    color: #d3e9ff;
+}
+
+.card .content h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #ff6347;
+    /* Tomato color */
+}
+
+.card .content p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.card .content a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: linear-gradient(220deg, #2936e9, #7c36ee, #8a08e0);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.project-card .content a:hover {
+    background: linear-gradient(220deg, #7c36ee, #8a08e0, #2936e9);
+}
+
+.portfolio-grid {
+    display: flex;
+    gap: 20px;
+}
 
 .portfolio-item {
     position: relative;
@@ -26,10 +82,7 @@
     height: 250px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.5s;
-    min-width: 352px;
-    max-width: 352px;
-    flex: 0 0 300px;
-    /* Fixed width for consistent sizing */
+    /* Removed fixed width and flex to allow swiper spacing */
 }
 
 .portfolio-item img {
@@ -43,8 +96,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
     background: rgba(41, 54, 233, 0.7);
     display: flex;
     flex-direction: column;
@@ -75,7 +128,6 @@
     transform: translateY(20px);
     transition: transform 0.5s;
     transition-delay: 0.1s;
-    margin-bottom: 10px;
 }
 
 .portfolio-item:hover .portfolio-title,
@@ -89,6 +141,7 @@
     margin-top: 40px;
 }
 
+
 .view-all-projects .btn-primary {
     display: inline-block;
     padding: 12px 30px;
@@ -97,7 +150,7 @@
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: var(--transtion);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     letter-spacing: 0.5px;
 }
@@ -107,14 +160,61 @@
     box-shadow: 0 8px 20px rgba(138, 8, 224, 0.4);
 }
 
-/* Accessibility: visible focus ring for keyboard users */
-.btn-primary:focus-visible {
-    outline: 3px solid rgba(138, 8, 224, 0.35);
-    outline-offset: 3px;
-    box-shadow: 0 4px 14px rgba(138, 8, 224, 0.12);
+@media (max-width: 992px) {
+    .project-hero h1 {
+        font-size: 2.5rem;
+    }
 }
 
-.swiper-button-prev svg, .swiper-button-next svg {
-    height: 60%;
-    color: white;
+@media (max-width: 768px) {    
+    .project-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .projects-hero h1 {
+        font-size: 3rem;
+    }
+}
+    
+@media (max-width: 576px) {
+    .scroll-left,
+    .scroll-right {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+    }
+
+    .scroll-left {
+        left: 5px;
+    }
+
+    .scroll-right {
+        right: 5px;
+    }
+    
+    .projects-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .project-content h2 {
+        font-size: 1.7rem;
+    }
+}
+
+/* For very small devices */
+@media (max-width: 375px) {
+    .scroll-left,
+    .scroll-right {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+
+    .scroll-left {
+        left: 2px;
+    }
+
+    .scroll-right {
+        right: 2px;
+    }
 }

@@ -1,0 +1,65 @@
+
+/* Skills Chart */
+.skills-chart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.skill-item {
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+}
+
+.skill-progress {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.skill-level {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    animation: skillFill 2s ease-out forwards;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+.card h2 {
+    text-align: center;
+}
+
+.html {
+    width: 95%;
+}
+.css {
+    width: 90%;
+}
+.js {
+    width: 85%;
+}
+.react {
+    width: 80%;
+}
+.node-js {
+    width: 75%;
+}
+.ui-ux {
+    width: 85%;
+}
+
+@media (max-width: 768px) {
+    .skills-chart {
+        justify-content: center;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+}
