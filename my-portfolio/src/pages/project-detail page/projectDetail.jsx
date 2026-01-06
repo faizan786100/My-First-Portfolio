@@ -217,7 +217,7 @@ const ProjectDetail = () => {
       <div className="project-hero" key={project.id}>
         <div className="container">
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-lg-6 d-flex justify-content-start align-items-center">
               <figcaption className="project-meta">
                 <div className="project-category">{project.category}</div>
                 <h1>{project.title}</h1>
@@ -246,7 +246,9 @@ const ProjectDetail = () => {
               <figure className="project-main-image">
                 <img src={project.gallery[0]} alt={project.title} onClick={() => openLightbox(0)} />
                 <div className="image-overlay" onClick={(e) => e.stopPropagation()}>
-                  <button
+                  <Link to={project.demoUrl} className="btn-view-demo">View Demo</Link>
+                  
+                  {/* <button
                     className="btn-view-demo"
                     onClick={(e) => {
                       e.stopPropagation();
@@ -255,7 +257,7 @@ const ProjectDetail = () => {
                     }}
                   >
                     View Demo
-                  </button>
+                  </button> */}
                 </div>
               </figure>
             </div>

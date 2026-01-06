@@ -45,8 +45,8 @@ const Header = () => {
   }, []);
 
   return (
-    <header>
-        <nav id="navbar" className="d-flex justify-content-between align-items-center position-fixed w-100">
+    <header id="navbar" className='position-fixed w-100 top-0 left-0 px-3' style={{ backgroundColor: 'black' }} >
+        <nav className="d-flex justify-content-between align-items-center">
             <figure className="logo">
                 <Link to="/">
                     <img src={require("../../Images/logo.png")} alt="Logo"/>
@@ -78,28 +78,28 @@ const Header = () => {
             <i className="menuBox-icon"></i>
             <ul className="menuBox">
                 <li>
-                    <a href="#home" className="menu-items"><i className="bi bi-house"></i> Home</a>
+                    <Link to="#home" className="menu-items"><i className="bi bi-house"></i> Home</Link>
                 </li>
                 <li>
-                    <a href="#projects" className="menu-items"><i className="bi bi-folder"></i> Projects</a>
+                    <Link to="#projects" className="menu-items"><i className="bi bi-folder"></i> Projects</Link>
                 </li>
                 <li>
-                    <a href="#services" className="menu-items"><i className="bi bi-tools"></i> Services</a>
+                    <Link to="#services" className="menu-items"><i className="bi bi-tools"></i> Services</Link>
                 </li>
                 <li>
-                    <a href="#skills" className="menu-items"><i className="bi bi-star"></i> Skills</a>
+                    <Link to="#skills" className="menu-items"><i className="bi bi-star"></i> Skills</Link>
                 </li>
                 <li>
-                    <a href="#testimonials" className="menu-items"><i className="bi bi-chat-quote"></i> Testimonials</a>
+                    <Link to="#testimonials" className="menu-items"><i className="bi bi-chat-quote"></i> Testimonials</Link>
                 </li>
                 <li>
-                    <a href="#blog" className="menu-items"><i className="bi bi-journal"></i> Blog</a>
+                    <Link to="#blog" className="menu-items"><i className="bi bi-journal"></i> Blog</Link>
                 </li>
                 <li>
-                    <a href="#about" className="menu-items"><i className="bi bi-info-circle"></i> About us</a>
+                    <Link to="#about" className="menu-items"><i className="bi bi-info-circle"></i> About us</Link>
                 </li>
                 <li>
-                    <a href="#contact" className="menu-items"><i className="bi bi-envelope"></i> Contact us</a>
+                    <Link to="#contact" className="menu-items"><i className="bi bi-envelope"></i> Contact us</Link>
                 </li>
             </ul>
         </nav>

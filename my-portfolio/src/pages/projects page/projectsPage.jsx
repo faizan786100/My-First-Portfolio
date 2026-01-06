@@ -120,6 +120,9 @@ const Projects = () => {
                                 ))}
                             </div>
                             <Link to={project.link} className="btn-view-project">View Project</Link>
+                            {project.id === 6 && (
+                              <Link to="/projects/restaurant" className="btn-view-project" style={{ marginLeft: '8px' }}>Open Demo</Link>
+                            )}
                         </div>
                     </div>
                 ))}

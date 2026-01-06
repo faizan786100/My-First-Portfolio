@@ -1,16 +1,12 @@
 /* =========== layout =========== */
 /* =========== Header & Nav =========== */
 
-nav {
-    padding: 0 1rem;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgb(0 0 0 / 92%));
-    top: 0;
-    left: 0;
+Header {
     z-index: 100;
     transition: var(--transition);
 }
 
-nav.scrolled {
+Header.scrolled {
     background: black;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
@@ -23,6 +19,19 @@ nav.scrolled {
 
 .logo img:hover {
     transform: scale(1.05);
+}
+
+Link, a {
+    position: relative;
+    color: var(--text-primary)!important;
+    text-decoration: none!important;
+    font-family: Raleway, sans-serif;
+    transition: color ease-in-out 0.3s, text-shadow ease-in-out 0.5s;
+}
+
+Link:hover, a:hover {
+    color: var(--accent)!important;
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.5)!important;
 }
 
 .menu-des {

@@ -41,13 +41,13 @@ function App() {
     <>
       {loading ? (
         <div className="Loading">
-          <div className="Spiral" style={{animationDelay: '0.1s'}}></div>
-          <div className="Spiral" style={{animationDelay: '0.2s'}}></div>
-          <div className="Spiral" style={{animationDelay: '0.3s'}}></div>
-          <div className="Spiral" style={{animationDelay: '0.4s'}}></div>
-          <div className="Spiral" style={{animationDelay: '0.5s'}}></div>
-          <div className="Spiral" style={{animationDelay: '0.6s'}}></div>
-          <div className="Spiral" style={{animationDelay: '0.7s'}}></div>
+          <div className="Spiral" style={{ animationDelay: '0.1s' }}></div>
+          <div className="Spiral" style={{ animationDelay: '0.2s' }}></div>
+          <div className="Spiral" style={{ animationDelay: '0.3s' }}></div>
+          <div className="Spiral" style={{ animationDelay: '0.4s' }}></div>
+          <div className="Spiral" style={{ animationDelay: '0.5s' }}></div>
+          <div className="Spiral" style={{ animationDelay: '0.6s' }}></div>
+          <div className="Spiral" style={{ animationDelay: '0.7s' }}></div>
         </div>
       ) : (
         <>
@@ -90,17 +90,17 @@ function App() {
                   <Footer />
                 </>
               } />
-              <Route path="/blogDetail/:id" element={
-                <>
-                  <Header />
-                  <BlogDetail />
-                  <Footer />
-                </>
-              } />
               <Route path="/contact" element={
                 <>
                   <Header />
                   <Contactpage />
+                  <Footer />
+                </>
+              } />
+              <Route path="/blogDetail/:id" element={
+                <>
+                  <Header />
+                  <BlogDetail />
                   <Footer />
                 </>
               } />
