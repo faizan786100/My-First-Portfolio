@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import './blogDetail.css';
+import './blogDetail page.css';
 import blog01 from "../../Images/blog_01.png"
 import blog02 from "../../Images/blog_02.webp"
 import blog03 from "../../Images/blog_03.jpg"

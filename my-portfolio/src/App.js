@@ -10,11 +10,11 @@ import About from "./components/about/about";
 import Testimonials from "./components/testimonials/testimonials";
 import Blogs from "./components/blogs/blog";
 import Contact from "./components/contact/contact";
-import ProjectPage from "./pages/projects/projectsPage";
-import ProjectDetail from "./pages/project-detail/projectDetail";
-import BlogDetail from "./pages/blog-detail/blogDetail";
-import Blogpage from "./pages/blog/blogPage"
-import Contactpage from "./pages/contact/contact"
+import ProjectPage from "./pages/projects page/projectsPage";
+import ProjectDetail from "./pages/project-detail page/projectDetail";
+import BlogDetail from "./pages/blog-detail page/blogDetail page";
+import Blogpage from "./pages/blog page/blogPage"
+import Contactpage from "./pages/contact page/contact page"
 import ScrollToTop from "./components/ScrollToTop";
 import BackToTop from "./components/backToTop";
 

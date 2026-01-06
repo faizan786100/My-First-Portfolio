@@ -34,6 +34,7 @@ const projects = {
     gallery: [firstMainImg,
       secondMain
     ],
+    demoUrl: 'https://example.com/project-1',
     relatedIds: ['2', '3']
   },
   '2': {
@@ -60,6 +61,7 @@ const projects = {
     testimonialPosition: 'Marketing Director',
     gallery: [secondMain
     ],
+    demoUrl: 'https://example.com/project-2',
     relatedIds: ['1', '4']
   },
   '3': {
@@ -86,6 +88,7 @@ const projects = {
     testimonialPosition: 'Product Manager, Health Startup',
     gallery: [thirdMain
     ],
+    demoUrl: 'https://example.com/project-3',
     relatedIds: ['1', '2']
   },
   '4': {
@@ -112,6 +115,7 @@ const projects = {
     testimonialPosition: 'CTO, Analytics Startup',
     gallery: [fourthMain
     ],
+    demoUrl: 'https://example.com/project-4',
     relatedIds: ['1', '2', '3']
   },
   '5': {
@@ -138,6 +142,7 @@ const projects = {
     testimonialPosition: 'Head of Product, EdTech Startup',
     gallery: [fifthMain
     ],
+    demoUrl: 'https://example.com/project-5',
     relatedIds: ['1', '3']
   },
   '6': {
@@ -164,6 +169,7 @@ const projects = {
     testimonialPosition: 'Owner, Fine Dining Restaurant',
     gallery: [sixthMain
     ],
+      demoUrl: '/restaurant',
     relatedIds: ['1', '2']
   },
 };
@@ -237,11 +243,21 @@ const ProjectDetail = () => {
               </figcaption>
             </div>
             <div className="col-lg-6">
-              {project.gallery.map((img, index) => (
-                <figure className="project-main-image">
-                  <img src={project.gallery[0]} alt={project.title} onClick={() => openLightbox(index)} />
-                </figure>
-              ))}
+              <figure className="project-main-image">
+                <img src={project.gallery[0]} alt={project.title} onClick={() => openLightbox(0)} />
+                <div className="image-overlay" onClick={(e) => e.stopPropagation()}>
+                  <button
+                    className="btn-view-demo"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      const url = project.demoUrl || project.demo || '#';
+                      if (url && url !== '#') window.open(url, '_blank', 'noopener');
+                    }}
+                  >
+                    View Demo
+                  </button>
+                </div>
+              </figure>
             </div>
           </div>
         </div>

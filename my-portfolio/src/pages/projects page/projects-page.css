@@ -187,6 +187,52 @@
     transition: var(--transition);
 }
 
+/* Overlay on hover for project detail main image */
+.project-main-image {
+    position: relative;
+}
+
+.project-main-image .image-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0);
+    transition: background 240ms ease, opacity 240ms ease, transform 240ms ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.project-main-image:hover .image-overlay {
+    background: rgba(0,0,0,0.35);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.btn-view-demo {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-weight: 600;
+    transform: translateY(8px) scale(0.98);
+    opacity: 0;
+    transition: transform 260ms cubic-bezier(.2,.9,.2,1), opacity 260ms ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.project-main-image:hover .btn-view-demo {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.btn-view-demo:active {
+    transform: scale(.98);
+}
+
 .project-description,
 .project-results {
     margin-bottom: 60px;
